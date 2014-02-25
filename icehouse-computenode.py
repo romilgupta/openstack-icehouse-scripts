@@ -143,7 +143,7 @@ def install_and_configure_nova():
     nova_paste_conf = "/etc/nova/api-paste.ini"
     nova_compute_conf = "/etc/nova/nova-compute.conf"
 
-    execute("apt-get install kvm libvirt-bin python-libvirt -y")
+    execute("apt-get install qemu-kvm kvm libvirt-bin python-libvirt -y")
     execute("apt-get install nova-compute-kvm novnc -y", True)
 
 
