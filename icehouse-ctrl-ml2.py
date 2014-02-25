@@ -115,7 +115,7 @@ def initialize_system():
     execute("apt-get update -y" , True)
     execute("apt-get install ubuntu-cloud-keyring python-setuptools python-iniparse python-psutil -y", True)
     delete_file("/etc/apt/sources.list.d/icehouse.list")
-    execute("echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/icehouse main >> /etc/apt/sources.list.d/havana.list")
+    execute("echo deb http://ubuntu-cloud.archive.canonical.com/ubuntu precise-updates/icehouse main >> /etc/apt/sources.list.d/icehouse.list")
     execute("apt-get update -y", True)
 
     global iniparse
@@ -344,7 +344,7 @@ def install_and_configure_neutron():
     execute_db_commnads("GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'localhost' IDENTIFIED BY 'neutron';")
 
     execute("apt-get install neutron-server -y", True)
-    execute("apt-get install neutron-plugin-ml2",True)
+    execute("apt-get install neutron-plugin-ml2 -y",True)
     add_to_conf(neutron_conf, "DEFAULT", "core_plugin", "neutron.plugins.ml2.plugin.Ml2Plugin")
     add_to_conf(neutron_conf, "DEFAULT", "service_plugins", "neutron.services.l3_router.l3_router_plugin.L3RouterPlugin")
     add_to_conf(neutron_conf, "database", "connection", "mysql://neutron:neutron@localhost/neutron")
