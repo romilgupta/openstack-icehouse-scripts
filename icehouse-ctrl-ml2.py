@@ -370,7 +370,6 @@ def install_and_configure_neutron():
     add_to_conf(neutron_plugin_conf, "ml2_type_vxlan", "vni_ranges", "500:999")
     add_to_conf(neutron_plugin_conf, "securitygroup", "firewall_driver", "neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewallDriver")
 	
-    #execute("sed -i 's/\/etc\/neutron\/plugins\/openvswitch\/ovs_neutron_plugin.ini/\/etc\/neutron\/plugins\/ml2\/ml2_conf.ini/g' /etc/default/neutron-server")
 
     execute("service neutron-server restart", True)
    
