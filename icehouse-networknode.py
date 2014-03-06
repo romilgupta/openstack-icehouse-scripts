@@ -131,7 +131,7 @@ def install_and_configure_ntp():
 def install_and_configure_neutron():
     neutron_conf = "/etc/neutron/neutron.conf"
     neutron_paste_conf = "/etc/neutron/api-paste.ini"
-    neutron_plugin_conf = "/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini"
+    neutron_plugin_conf = "/etc/neutron/plugins/ml2/ml2_conf.ini"
     neutron_dhcp_ini="/etc/neutron/dhcp_agent.ini"
     neutron_l3_ini="/etc/neutron/l3_agent.ini"
     execute("apt-get install openvswitch-switch openvswitch-datapath-dkms -y", True)

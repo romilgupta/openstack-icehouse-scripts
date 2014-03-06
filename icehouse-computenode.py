@@ -195,8 +195,7 @@ def install_and_configure_nova():
 def install_and_configure_ovs():
     neutron_conf = "/etc/neutron/neutron.conf"
     neutron_paste_conf = "/etc/neutron/api-paste.ini"
-    neutron_plugin_conf = "/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini"
-    
+    neutron_plugin_conf = "/etc/neutron/plugins/ml2/ml2_conf.ini" 
     execute("apt-get install openvswitch-switch openvswitch-datapath-dkms -y", True)
 	
     execute("ovs-vsctl --may-exist add-br br-int")
