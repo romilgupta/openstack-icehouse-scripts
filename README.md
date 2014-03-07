@@ -1,12 +1,8 @@
-openstack-icehouse-scripts
-==========================
-
-Openstack Icehouse installation
-
-
 Openstack Icehouse Installation scripts for Ubuntu 12.04 LTS
+================
 
 For Openstack Controller :
+--------------------------
 
 Operating System : Ubuntu12.04 LTS
 
@@ -28,8 +24,9 @@ Nova( nova-api nova-cert nova-scheduler nova-conductor novnc nova-consoleauth no
 
 Dashboard
 
-For Openstack Compute Node:
 
+For Openstack Compute Node:
+--------------------------
 Operating System : Ubuntu12.04 LTS
 
 NIC's:
@@ -47,7 +44,7 @@ Nova( nova-compute)
 Neutron ( ovs-agent)
 
 For Openstack Network Node:
-
+--------------------------
 Operating System : Ubuntu12.04 LTS
 
 NIC's:
