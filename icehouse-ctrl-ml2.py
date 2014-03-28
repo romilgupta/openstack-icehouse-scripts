@@ -322,6 +322,8 @@ def install_and_configure_nova():
     add_to_conf(nova_conf, "DEFAULT", "neutron_admin_auth_url", "http://%s:5000/v2.0/"%ip_address)
     add_to_conf(nova_conf, "DEFAULT", "neutron_auth_strategy", "keystone")
     add_to_conf(nova_conf, "DEFAULT", "neutron_url", "http://%s:9696/"%ip_address)
+    add_to_conf(nova_conf, "DEFAULT", "firewall_driver", "nova.virt.firewall.NoopFirewallDriver")
+    add_to_conf(nova_conf, "DEFAULT", "security_group_api", "neutron")
   
     execute("nova-manage db sync")
     execute("service nova-api restart", True)
