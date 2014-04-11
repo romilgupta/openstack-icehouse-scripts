@@ -263,7 +263,7 @@ def install_and_configure_glance():
     add_to_conf(glance_api_conf, "paste_deploy", "flavor", "keystone")
     add_to_conf(glance_api_conf, "DEFAULT", "verbose", "true")
     add_to_conf(glance_api_conf, "DEFAULT", "debug", "true")
-
+    add_to_conf(glance_api_conf, "DEFAULT", "db_enforce_mysql_charset", "false")
 
     add_to_conf(glance_registry_conf, "DEFAULT", "sql_connection", "mysql://glance:glance@localhost/glance")
     add_to_conf(glance_registry_conf, "paste_deploy", "flavor", "keystone")
