@@ -217,7 +217,7 @@ def install_and_configure_keystone():
 
     add_to_conf(keystone_conf, "DEFAULT", "admin_token", "ADMINTOKEN")
     add_to_conf(keystone_conf, "DEFAULT", "admin_port", 35357)
-    add_to_conf(keystone_conf, "sql", "connection", "mysql://keystone:keystone@localhost/keystone")
+    add_to_conf(keystone_conf, "database", "connection", "mysql://keystone:keystone@localhost/keystone")
     add_to_conf(keystone_conf, "signing", "token_format", "UUID")
 
     execute("keystone-manage db_sync")
