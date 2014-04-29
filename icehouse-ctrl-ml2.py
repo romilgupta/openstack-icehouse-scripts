@@ -156,7 +156,8 @@ def _create_keystone_users():
     os.environ['SERVICE_TOKEN'] = 'ADMINTOKEN'
     os.environ['SERVICE_ENDPOINT'] = 'http://%s:35357/v2.0'% ip_address
     os.environ['no_proxy'] = "localhost,127.0.0.1,%s" % ip_address
-
+    global service_tenant 
+    
     #TODO(ish) : This is crude way of doing. Install keystone client and use that to create tenants, role etc
     admin_tenant = execute("keystone tenant-create --name admin --description 'Admin Tenant' --enabled true |grep ' id '|awk '{print $4}'")
     admin_user = execute("keystone user-create --tenant_id %s --name admin --pass secret --enabled true|grep ' id '|awk '{print $4}'" % admin_tenant)
