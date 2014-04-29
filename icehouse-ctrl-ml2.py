@@ -357,6 +357,13 @@ def install_and_configure_neutron():
     add_to_conf(neutron_conf, "DEFAULT", "rabbit_port", "5672")
     add_to_conf(neutron_conf, "DEFAULT", "allow_overlapping_ips", "False")
     add_to_conf(neutron_conf, "DEFAULT", "root_helper", "sudo neutron-rootwrap /etc/neutron/rootwrap.conf")
+    add_to_conf(neutron_conf, "DEFAULT", "notify_nova_on_port_status_changes", "True")
+    add_to_conf(neutron_conf, "DEFAULT", "notify_nova_on_port_data_changes", "True")
+    add_to_conf(neutron_conf, "DEFAULT", "nova_url", "http://127.0.0.1:8774/v2")
+    add_to_conf(neutron_conf, "DEFAULT", "nova_admin_username", "nova")
+    add_to_conf(neutron_conf, "DEFAULT", "nova_admin_password", "nova")
+    add_to_conf(neutron_conf, "DEFAULT", "nova_admin_tenant_id", service_tenant)
+    add_to_conf(neutron_conf, "DEFAULT", "nova_admin_auth_url", "http://127.0.0.1:5000/v2.0/")
 
     add_to_conf(neutron_paste_conf, "filter:authtoken", "auth_host", ip_address)
     add_to_conf(neutron_paste_conf, "filter:authtoken", "auth_port", "35357")
