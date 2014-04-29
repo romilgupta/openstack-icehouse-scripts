@@ -13,7 +13,7 @@ iniparse = None
 psutil = None
 
 mysql_password = "secret"
-service_tenant = ''
+service_tenant = None
 
 def kill_process(process_name):
     for proc in psutil.process_iter():
